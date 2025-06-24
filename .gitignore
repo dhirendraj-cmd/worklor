@@ -1,0 +1,62 @@
+# 🐍 Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# 🔧 Virtualenv
+env/
+venv/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# 📁 Django-specific
+*.sqlite3
+db.sqlite3
+*.db
+local_settings.py
+settings_local.py
+*.pot
+*.mo
+
+# 🔒 Secret files
+.env
+.env.*
+
+# 📂 Migrations (Optional — keep __init__.py)
+**/migrations/*.pyc
+**/migrations/*.py
+!*/migrations/__init__.py
+
+# 📄 IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 🐘 PostgreSQL dumps
+*.sql
+
+# 🧪 Testing
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# ⚙️ PyInstaller
+dist/
+build/
+*.spec
+
+# 🧹 Others
+.DS_Store
+Thumbs.db
