@@ -1,7 +1,8 @@
 from account.models import User
 from .serializers import UserSerializer
 from rest_framework import viewsets
-# from rest_framework.pagination import PageNumberPagination
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
 
 
 class UserApiView(viewsets.ReadOnlyModelViewSet):
@@ -11,7 +12,8 @@ class UserApiView(viewsets.ReadOnlyModelViewSet):
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    # pagination_class = Pa
+    pagination_class = PageNumberPagination
+    permission_classes = [IsAuthenticated]
 
     
 
