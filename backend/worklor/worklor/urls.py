@@ -8,7 +8,7 @@ urlpatterns = [
     path('api/v1/', include('worklor_api.api.v1.urls', namespace="worklor_api_v1")),
 
     # account app versioned endpoint
-    path('account/v1/', include('account.api.v1.urls', namespace="account_v1")),
+    path('account/', include('account.api.v1.urls', namespace="account_api_v1")),
 ]
 
 if settings.DEBUG:
