@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'worklor_api',
     'rest_framework',
     'account',
+    'team',
+    'task',
+    'comment',
+    'user_profile.apps.UserProfileConfig',
 ]
 
 MIDDLEWARE = [
