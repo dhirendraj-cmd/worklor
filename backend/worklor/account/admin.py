@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import User
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from user_profile.profile_models import UserProfile
 
 @admin.register(User)
 class CustomUserAdmin(BaseUserAdmin):
@@ -26,3 +27,4 @@ class CustomUserAdmin(BaseUserAdmin):
     )
 
 
+admin.site.register(UserProfile)
