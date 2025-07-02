@@ -3,7 +3,7 @@ from django.conf import settings
 
 
 class UserProfile(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     bio = models.TextField(blank=True, null=True)
     pic = models.ImageField(upload_to="image/", null=True, blank=True)
     phone = models.CharField(max_length=15, blank=True, null=True)
