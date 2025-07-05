@@ -13,6 +13,7 @@ app_name = "account_api_v1"
 urlpatterns = [
     # path('v1/', include(router.urls)),
     path("v1/userslist/", views.UserListCreateView.as_view(), name="userslist"),
+    path("v1/userdetail/<str:pk>/", views.UserDetailUpdateView.as_view(), name="userdetail"),
 ]
 
 
