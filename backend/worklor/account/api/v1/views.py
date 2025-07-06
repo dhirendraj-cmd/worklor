@@ -1,11 +1,12 @@
 from account.models import User
 from .serializers import UserSerializer, UserCreateSerializer, UserUpdateSerializer
 from rest_framework.views import APIView
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from django.http import Http404
+from utils.pagination import CustomPagination
+
 
 
 class UserListCreateView(APIView):
@@ -23,8 +24,10 @@ class UserListCreateView(APIView):
 
     def get(self, request, format=None):
         users = User.objects.all().order_by('-updated_at')
-        serializer = UserSerializer(users, many=True)
-        return Response(serializer.data)
+        paginator = CustomPagination()
+        result_page = paginator.paginate_queryset(users, request)
+        serializer = UserSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)
     
     def post(self, request, format=None):
         serializer = UserCreateSerializer(data=request.data)

@@ -9,6 +9,7 @@ urlpatterns = [
 
     # account app versioned endpoint
     path('account/', include('account.api.v1.urls', namespace="account_api_v1")),
+    path('profile/', include('user_profile.api.v1.urls', namespace="profile_api_v1")),
 ]
 
 if settings.DEBUG:
