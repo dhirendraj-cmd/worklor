@@ -8,8 +8,5 @@ from .profile_models import UserProfile
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     if created:
         UserProfile.objects.create(user=instance)
-    # else:
-    #     instance.profile.save()
-
 
 
