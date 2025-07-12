@@ -9,7 +9,12 @@ urlpatterns = [
 
     # account app versioned endpoint
     path('account/', include('account.api.v1.urls', namespace="account_api_v1")),
+    # profile app versioned endpoint
     path('profile/', include('user_profile.api.v1.urls', namespace="profile_api_v1")),
+    # team app versioned endpoint
+    path('team/', include('team.team_api.v1.team_urls', namespace="team_api_v1")),
+    # task app versioned endpoint
+    # path('task/', include('task.task_api.v1.task_urls', namespace="task_api_v1")),
 ]
 
 if settings.DEBUG:
